@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pregunta 2</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -42,7 +45,7 @@
       </li>
     </ul>
     <div class="section" id="enunciado" style="padding-left:25%;margin-top: 5%;">
-      <button style="align-self: center;" type="button" onclick="CargarDatos()">Obtener Datos</button>
+      <button style="align-self: center;" type="button" onclick="CargarDatos()">Obtener Datos</button><br><br>
       <div id="demo"></div>
     </div>
     <div class="section" id="resolucion" style="margin-top: 5%;">
@@ -55,6 +58,7 @@
 
   <script>
 
+        
 
 
 
@@ -64,24 +68,33 @@
     //Creacion del objeto XMLHttpRequest
 
     function CargarDatos() {
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          document.getElementById("demo").innerHTML = this.responseText;
-        }
-      };
-      xmlhttp.open("GET", "ejemplo.xml", false);
-      xmlhttp.send();
-      xmlDoc = xmlhttp.responseXML;
+
+      var xhttp;
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              var nombre,comida, txt ,i, xmlDoc; 
+              xmlDoc = xhttp.responseXML;
+              txt= "";
+              id= xmlDoc.getElementsByTagName("id");
+              nombre = xmlDoc.getElementsByTagName("nombre");
+              comida = xmlDoc.getElementsByTagName("comida");
+             //x= xmlDoc.getElementsByTagName("nombre");
+              for (i = 0; i < id.length; i++) { 
+                  txt+="El "+" "+ nombre[i].childNodes[0].nodeValue +" "+ "come"+" "+comida[i].childNodes[0].nodeValue+"<br>";
+                  document.getElementById("demo").innerHTML = txt ;   
+              }
+             
+            }
+        };
+        xhttp.open("GET", "ejemplo.xml", true);
+        xhttp.send();
+
+      
+      
 }
-
-
-
-
-
-
   </script>
-
+<!--https://www.w3schools.com/xml/tryit.asp?filename=try_dom_list_loop-->
 </body>
 
 </html>

@@ -7,27 +7,27 @@
 	</mamiferos>
 	<mamiferos>
 		<id>A02</id>
-		<nombre>Guacamayo</nombre>
-		<comida>Frutas</comida>
+		<nombre>León</nombre>
+		<comida>Jirafas</comida>
+	</mamiferos>
+	<mamiferos>
+		<id>A03</id>
+		<nombre>Perro</nombre>
+		<comida>Croquetas</comida>
+	</mamiferos>
+	<mamiferos>
+		<id>A04</id>
+		<nombre>Gato</nombre>
+		<comida>Croquetas</comida>
 	</mamiferos>
 	<reptiles>
-		<id>A03</id>
+		<id>A05</id>
 		<nombre>Dinosaurio</nombre>
 		<comida>Carne</comida>
 	</reptiles>
 	<aves>
-		<id>A04</id>
-		<nombre>Perro</nombre>
-		<comida>Croquetas</comida>
-	</aves>
-	<peces>
-		<id>A05</id>
-		<nombre>Gato</nombre>
-		<comida>Croquetas</comida>
-	</peces>
-	<anfibios>
 		<id>A06</id>
-		<nombre>León</nombre>
-		<comida>Jirafas</comida>
-	</anfibios>
+		<nombre>Guacamayo</nombre>
+		<comida>Frutas</comida>
+	</aves>
 </animales>
